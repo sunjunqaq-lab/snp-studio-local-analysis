@@ -1,0 +1,21 @@
+# 运行时状态和日志
+.runtime/
+*.log
+__pycache__/
+*.pyc
+*.pyo
+
+# 本地临时依赖和解压目录
+deps/
+snp_pyz/
+
+# 大体积数据、模型和压缩包；如仓库允许大文件，可改用 Git LFS 或发布附件保存
+*.zip
+*.pyz
+*.joblib
+*.npy
+*.npz
+
+# 系统文件
+Thumbs.db
+.DS_Store
