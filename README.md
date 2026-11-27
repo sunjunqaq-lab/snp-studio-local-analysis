@@ -10,7 +10,7 @@
 4. 后端推理包提供固定 SNP 面板上的牛品种候选预测接口；
 5. 用训练记录和准确率审计材料说明模型指标、适用范围和局限。
 
-项目允许 AI 辅助生成代码，但核心数据流、接口约束和质控阈值需要能够自己讲清楚。
+核心实现围绕明确的数据流、接口约束和质控阈值展开，展示时需要讲清这些规则的依据。
 
 ## 2. 目录结构
 
@@ -133,7 +133,7 @@ python start-server.py --status
 - 后端：Python、`http.server`、NumPy、scikit-learn、joblib。
 - 部署：Python 标准库静态服务、Nginx 反向代理参考配置。
 - 数据格式：CSV、TSV、TXT、PLINK RAW；后端另支持 VCF/VCF.GZ。
-- 版本管理：Git 已初始化并推送到 GitHub 私有仓库；大体积压缩包、模型和运行时文件按 `.gitignore` 忽略。
+- 版本管理：Git 已初始化并推送到 GitHub 公开仓库；大体积压缩包、模型和运行时文件按 `.gitignore` 忽略。
 
 ## 7. 考核展示建议顺序
 
