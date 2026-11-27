@@ -133,7 +133,7 @@ python start-server.py --status
 - 后端：Python、`http.server`、NumPy、scikit-learn、joblib。
 - 部署：Python 标准库静态服务、Nginx 反向代理参考配置。
 - 数据格式：CSV、TSV、TXT、PLINK RAW；后端另支持 VCF/VCF.GZ。
-- 版本管理：项目要求使用 Git；当前本地目录尚未初始化 Git 仓库。
+- 版本管理：Git 已初始化并推送到 GitHub 私有仓库；大体积压缩包、模型和运行时文件按 `.gitignore` 忽略。
 
 ## 7. 考核展示建议顺序
 
@@ -146,16 +146,15 @@ python start-server.py --status
 7. **讲后端接口**：对照 `server.py` 和 `cattle.py` 说明上传、位点匹配、质控、Top3 候选预测链路。
 8. **讲指标和局限**：说明交叉验证结果、没有独立外测、分数不是概率、需要人工复核。
 
-## 8. Git 待办
+## 8. Git 仓库状态
 
-当前目录没有 `.git` 文件夹，本部署包本身也不包含 Git 目录。考核前需要补全 Git 流程：
-
-1. 在 VS Code、Git Desktop 或其他图形化 Git 工具中打开项目目录；
-2. 初始化仓库，添加 `README.md`、`dist/`、`start-server.py` 和核心脚本；
-3. 大体积 `.zip`、`.pyz`、模型文件可按仓库大小选择 `.gitignore` 忽略，或使用 Git LFS / 发布附件保存；
-4. 提交初始版本，提交信息可写：`init: SNP Studio 前端质控演示与后端推理说明`；
-5. 新建私有 Gitee/GitHub 仓库并推送；
-6. 展示时能说明：本地提交记录、远程仓库地址、哪些文件纳入版本管理、哪些大文件被忽略。
+- 远程仓库：`https://github.com/sunjunqaq-lab/snp-studio-local-analysis`
+- 分支：`main`
+- 初始提交：`f29dbb9 init: SNP Studio 本地质控演示与后端推理说明`
+- 已纳入版本管理：`README.md`、`README-DEPLOY.md`、`dist/`、`start-server.py`、部署参考脚本和答辩讲解稿。
+- 未纳入版本管理：`.zip`、`.pyz`、`*.joblib`、`*.npy`、`*.npz` 等大体积数据和模型文件；这些文件保留在本地或通过发布附件/Git LFS 另行保存。
+- 展示时可以说明：本地提交记录、远程仓库地址、哪些文件纳入版本管理、哪些大文件被忽略。
+- 后续修改后，常规流程为：`git add` → `git commit` → `git push`。
 
 ## 9. 关键代码对照
 
